@@ -9,6 +9,16 @@ import {
     excluirEpiController
 } from "./controller/epiController.js";
 
+import {
+    cadastrarFuncionarioController,
+    listarFuncionariosController,
+    buscarFuncionarioController,
+    atualizarFuncionarioController,
+    excluirFuncionarioController,
+    ativarFuncionarioController,
+    desativarFuncionarioController
+} from "./controller/funcionarioController.js";
+
 console.log("===== 1. CADASTRO DE EPIs =====");
 
 cadastrarEpiController(101, "Capacete de segurança", "12345", 20);
@@ -52,3 +62,47 @@ excluirEpiController(2);
 console.log("\n===== 9. LISTAGEM FINAL =====");
 
 listarEpisController();
+
+console.log("\n===== 10. CADASTRO DE FUNCIONÁRIOS =====");
+
+cadastrarFuncionarioController(
+    "F001", "Ana Souza", "Produção", "Operadora"
+);
+cadastrarFuncionarioController(
+    "F002", "Bruno Lima", "Manutenção", "Técnico"
+);
+cadastrarFuncionarioController(
+    "F003", "Carla Mendes", "Logística", "Supervisora"
+);
+
+console.log("\n===== 11. LISTAGEM DOS FUNCIONÁRIOS =====");
+
+listarFuncionariosController();
+
+console.log("\n===== 12. BUSCA PELO ÍNDICE 1 =====");
+
+buscarFuncionarioController(1);
+
+console.log("\n===== 13. DESATIVAR O FUNCIONÁRIO DO ÍNDICE 1 =====");
+
+desativarFuncionarioController(1);
+buscarFuncionarioController(1);
+
+console.log("\n===== 14. ATIVAR O FUNCIONÁRIO DO ÍNDICE 1 =====");
+
+ativarFuncionarioController(1);
+buscarFuncionarioController(1);
+
+console.log("\n===== 15. ATUALIZAR O FUNCIONÁRIO DO ÍNDICE 1 =====");
+
+atualizarFuncionarioController(
+    1, "F002", "Bruno Lima", "Manutenção", "Técnico de segurança"
+);
+
+console.log("\n===== 16. EXCLUIR O FUNCIONÁRIO DO ÍNDICE 2 =====");
+
+excluirFuncionarioController(2);
+
+console.log("\n===== 17. LISTAGEM FINAL DOS FUNCIONÁRIOS =====");
+
+listarFuncionariosController();
